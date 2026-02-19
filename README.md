@@ -2,6 +2,8 @@
 
 Character for [Autonomous Lab](https://autolab.kejunying.com). A bioinformatics trainee who builds reproducible NGS analysis pipelines.
 
+Skills are auto-learned and validated. Each skill has a `meta.yaml` tracking certification status.
+
 ## Structure
 
 ```
@@ -9,11 +11,14 @@ autolab-char-bioinfo-trainee/
 ├── character.yaml
 └── skills/
     ├── ngs-pipeline/
-    │   └── SKILL.md          # pysam, deeptools, BAM processing
+    │   ├── SKILL.md
+    │   └── meta.yaml          # pysam, deeptools, BAM processing
     ├── differential-expression/
-    │   └── SKILL.md          # PyDESeq2, volcano plots, design matrices
+    │   ├── SKILL.md
+    │   └── meta.yaml          # PyDESeq2, volcano plots, design matrices
     └── reproducible-figures/
-        └── SKILL.md          # matplotlib, seaborn, publication styling
+        ├── SKILL.md
+        └── meta.yaml          # matplotlib, seaborn, publication styling
 ```
 
 ## Install
