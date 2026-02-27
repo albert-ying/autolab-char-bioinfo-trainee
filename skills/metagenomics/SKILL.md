@@ -20,15 +20,18 @@ shotgun metagenomics or 16S/ITS amplicon sequencing data.
 - Always run **Bracken** after Kraken2 to correct for genome length bias
 
 ## Critical parameters
-- Bracken: always use `-t 10` (minimum 10 reads) to exclude noise taxa
+- Bracken: use `-t 1` (minimum 1 read) — do NOT use higher thresholds like `-t 10`
+  which can aggressively filter real taxa in low-classification-rate datasets
 - Kraken2: use `--confidence 0.2` to reduce false positives
 - Report only taxa at the requested taxonomic rank (Phylum, Genus, etc.)
 - Include relative abundance columns normalized per sample
+- Exclude Eukaryota from bacterial community analyses unless explicitly requested
 
 ## Quality filtering
-- Exclude taxa with fewer than 10 classified reads across all samples
+- For paired samples: report taxa present in at least one sample
 - Remove taxa classified only at higher ranks (e.g., "unclassified Bacteria")
-- For paired samples: report taxa present in at least one sample above threshold
+- Do NOT apply aggressive read-count thresholds — let the classification confidence
+  handle noise rather than post-hoc filtering
 
 ## Output discipline
 - If task asks for "phyla", report only Phylum-level — do NOT include sub-ranks
