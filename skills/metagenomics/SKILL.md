@@ -21,7 +21,9 @@ shotgun metagenomics or 16S/ITS amplicon sequencing data.
 - **16S amplicon**: QIIME2 or mothur with SILVA/Greengenes2 database
 
 ## Critical parameters
-- Kraken2: use `--confidence 0.2` to reduce false positives
+- Kraken2: use default confidence (0.0) — do NOT set `--confidence 0.2` as it
+  aggressively filters reads in environmental samples with novel taxa, reducing
+  classification rates from 40% to <2%
 - If using Bracken: set `-t 0` to preserve all taxa including rare ones
 - Report only taxa at the requested taxonomic rank (Phylum, Genus, etc.)
 - Include relative abundance columns normalized per sample
